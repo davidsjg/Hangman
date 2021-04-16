@@ -9,14 +9,27 @@ document.addEventListener('keypress', logKey);
 function logKey(e) {
   let keyPressed = e.key
 
+  chars.forEach(function(letter){ 
+    console.log(typeof letter)
+    console.log(typeof keyPressed)
+
+    if (keyPressed == letter) {
+      console.log("success")
+    } else {
+      console.log("fail")
+    }
+  })
 }
 
 let wordArray = ['steel', 'donkey', 'buffalo', 'avalanche', 'cereal']
 
+var currWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+var chars = currWord.split('');
+console.log(currWord)
 
 
 
-setTime()   
+
 
 
 let secondsLeft = 75
@@ -52,14 +65,12 @@ let under = ` _ `
 
 startBtn.addEventListener("click", function() {
   displayDiv.textContent = ""
+  setTime()   
   createRandom()
 })
 
 let createRandom = function() {
-  var currWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-  var chars = currWord.split('');
-  console.log(chars)
-  console.log(currWord)
+
 
   chars.forEach(function(letter) {
     var numLetters = chars.length

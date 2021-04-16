@@ -2,10 +2,10 @@ let timerDisp = document.querySelector(".timer")
 
 
 setTime()   
-setSeconds()
+// setSeconds()
 
 
-let secondsLeft = 300
+let secondsLeft = 75
 let minutes = secondsLeft/60
 
 function setTime() {
@@ -17,8 +17,10 @@ function setTime() {
       console.log(Math.floor(minutes))
 
       let modSeconds = secondsLeft % 60
+      console.log(modSeconds)
       let seconds = modSeconds * 60 
-      timerDisp.textContent = Math.floor(minutes) + ":" + secondsLeft2
+      console.log(seconds)
+      timerDisp.textContent = Math.floor(minutes) + ":" + modSeconds
 
       if(secondsLeft === 0) {
         // Stops execution of action at set interval
@@ -28,32 +30,4 @@ function setTime() {
       }
   
     }, 1000);
-}
-
-let secondsLeft2 = 59   
-
-function setSeconds() {
-var timerInterval2 = setInterval(function() {
-    secondsLeft2--;
-  
-
-    if (secondsLeft2 === 0) {
-
-        clearInterval(timerInterval2)
-        secondsLeft2=59
-        setSeconds()
-
-    }
-
-
-    // if(secondsLeft2 === 0 && minutes === 0) {
-    //   // Stops execution of action at set interval
-    //   clearInterval(timerInterval2);
-    //   // Calls function to create and append image
-    //   alert("Out of Time!")
-    // } 
-
-
-  }, 1000);
-
 }

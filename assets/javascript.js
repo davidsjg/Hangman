@@ -2,10 +2,11 @@ let timerDisp = document.querySelector(".timer")
 let startBtn = document.querySelector("#startBtn")
 let displayDiv = document.querySelector(".display")
 let wordDisp = document.querySelector(".wordDisplay")
+let charDisp = document.querySelector(".displayChar")
 const log = document.getElementById('log');
 
+//event listener on keydown
 document.addEventListener('keypress', logKey);
-
 function logKey(e) {
   let keyPressed = e.key
 
@@ -22,15 +23,11 @@ function logKey(e) {
   })
 }
 
+//grabs random word from array, splits word into letters, puts letters into new array
 let wordArray = ['steel', 'donkey', 'buffalo', 'avalanche', 'cereal']
-
 var currWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var chars = currWord.split('');
 console.log(currWord)
-
-
-
-
 
 
 let secondsLeft = 75
@@ -75,33 +72,29 @@ let createRandom = function() {
   let wordLength = ""
 
   chars.forEach(function(letter) {
-    var numLetters = chars.length
-
-    let newDiv = document.createElement("div")
-
-    
-
     var newLetter = document.createElement("p")
+
     newLetter.classList.add('letter-'+letter)
     newLetter.classList.add('letters')
     newLetter.textContent= under
+
+    let newChar = document.createElement("p")
+
+    newChar.classList.add("char-"+letter)
+    newChar.classList.add('chars')
+    newChar.textContent= letter
+
+
+
     wordLength += newLetter
-    console.log(wordLength)
+
+    charDisp.appendChild(newChar)
+    
+
+
 
     wordDisp.appendChild(newLetter)
-
-    // var newUnder = document.createElement("p")
-    // newUnder.textContent = "_"
-    // wordDisp.appendChild(newUnder)
-
-    // wordUnder += under
-
-
-    // wordDisp.textContent = wordUnder
-
   })
-
-
 }
 
 

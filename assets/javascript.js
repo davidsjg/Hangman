@@ -14,6 +14,7 @@ function logKey(e) {
     console.log(typeof keyPressed)
 
     if (keyPressed == letter) {
+      
       console.log("success")
     } else {
       console.log("fail")
@@ -71,17 +72,32 @@ startBtn.addEventListener("click", function() {
 
 let createRandom = function() {
 
+  let wordLength = ""
 
   chars.forEach(function(letter) {
     var numLetters = chars.length
+
+    let newDiv = document.createElement("div")
+
+    
+
+    var newLetter = document.createElement("p")
+    newLetter.classList.add('letter-'+letter)
+    newLetter.classList.add('letters')
+    newLetter.textContent= under
+    wordLength += newLetter
+    console.log(wordLength)
+
+    wordDisp.appendChild(newLetter)
+
     // var newUnder = document.createElement("p")
     // newUnder.textContent = "_"
     // wordDisp.appendChild(newUnder)
 
-    wordUnder += under
+    // wordUnder += under
 
 
-    wordDisp.textContent = wordUnder
+    // wordDisp.textContent = wordUnder
 
   })
 

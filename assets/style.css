@@ -33,3 +33,13 @@
 .timerDisp {
   padding: 30px;
 }
+
+.letters {
+  /* float: right; */
+  /* text-align: center; */
+  /* <div style="width: 50%; margin: 0 auto;">Hello</div> */
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  display: inline;
+}

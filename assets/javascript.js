@@ -121,11 +121,8 @@ function logKey(e) {
 
     if (keyPressed == letter) {
       // showChar.removeAttribute("class", "hidden")
-      $('#chars-'+letter).text(letter)
-      $("#wins").text(letter)
+      $('.char-'+letter).text(letter)
 
-      console.log(letter)
-      console.log("success")
     } else {
       console.log("fail")
     }

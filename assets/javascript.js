@@ -6,22 +6,22 @@ let charDisp = document.querySelector(".displayChar")
 const log = document.getElementById('log');
 
 //event listener on keydown
-document.addEventListener('keypress', logKey);
-function logKey(e) {
-  let keyPressed = e.key
+// document.addEventListener('keypress', logKey);
+// function logKey(e) {
+//   let keyPressed = e.key
 
-  chars.forEach(function(letter){ 
-    console.log(typeof letter)
-    console.log(typeof keyPressed)
+//   chars.forEach(function(letter){ 
+//     console.log(typeof letter)
+//     console.log(typeof keyPressed)
 
-    if (keyPressed == letter) {
+//     if (keyPressed == letter) {
       
-      console.log("success")
-    } else {
-      console.log("fail")
-    }
-  })
-}
+//       console.log("success")
+//     } else {
+//       console.log("fail")
+//     }
+//   })
+// }
 
 //grabs random word from array, splits word into letters, puts letters into new array
 let wordArray = ['steel', 'donkey', 'buffalo', 'avalanche', 'cereal']
@@ -81,21 +81,55 @@ let createRandom = function() {
     let newChar = document.createElement("p")
 
     newChar.classList.add("char-"+letter)
-    newChar.classList.add('chars')
-    newChar.textContent= letter
+    newChar.classList.add("chars")
+    newChar.id ='chars-'+letter
+    // newChar.classList.add('hidden')
+    newChar.textContent= ` _ `//+letter
 
+
+    // // int j = 123456;
+    // String x = Integer.toString(j);
+    // x = x.substring(0, 4) + "." + x.substring(4, x.length);
+
+    let newCharString = chars.toString()
+
+
+    console.log(newCharString)
 
 
     wordLength += newLetter
 
     charDisp.appendChild(newChar)
-    
-
-
-
-    wordDisp.appendChild(newLetter)
+  
+    // wordDisp.appendChild(newLetter)
   })
 }
 
+document.addEventListener('keypress', logKey);
+
+
+
+function logKey(e) {
+
+
+  chars.forEach(function(letter){ 
+    // console.log(typeof letter)
+    // console.log(typeof keyPressed)
+    let keyPressed = e.key
+    let showChar= document.querySelector("#chars"-letter)
+    console.log(showChar)
+
+    if (keyPressed == letter) {
+      // showChar.removeAttribute("class", "hidden")
+      $('#chars-'+letter).text(letter)
+      $("#wins").text(letter)
+
+      console.log(letter)
+      console.log("success")
+    } else {
+      console.log("fail")
+    }
+  })
+}
 
 

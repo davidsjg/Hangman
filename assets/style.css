@@ -47,3 +47,11 @@
 .chars {
   display: inline;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

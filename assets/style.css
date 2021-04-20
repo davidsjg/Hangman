@@ -52,6 +52,10 @@
   visibility: hidden;
 }
 
+.col-sm-8 hidden {
+  display: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -83,3 +87,19 @@
 .floatLeft {
   float: left;
 }
+
+.hangGuy {
+  /* visibility: hidden; */
+}
+
+.show {
+  display: block;
+}
+
+/* #gameComplete {
+  visibility: hidden;
+} */
+
+/* .gameOver {
+  visibility: hidden;
+} */

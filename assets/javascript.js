@@ -4,6 +4,11 @@ let displayDiv = document.querySelector(".display")
 let wordDisp = document.querySelector(".wordDisplay")
 let charDisp = document.querySelector(".displayChar")
 const log = document.getElementById('log');
+let rope = document.getElementById("rope")
+let rope2 = document.getElementById("rope2")
+
+
+
 
 
 //grabs random word from array, splits word into letters, puts letters into new array
@@ -70,9 +75,6 @@ let createRandom = function() {
     newChar.textContent= ` _ `//+letter
 
 
-    // // int j = 123456;
-    // String x = Integer.toString(j);
-    // x = x.substring(0, 4) + "." + x.substring(4, x.length);
 
     let newCharString = chars.toString()
 
@@ -115,18 +117,9 @@ function logKey(e) {
 
 
 
-    } else {
-      // console.log("fail")
-      wrong += 1
-      // console.log("correct =" + correct)
-      // console.log("new correct =" + newCorrect)
-
-
     }
 
 
-//     console.log(correctAnswers)
-// console.log(wrongAnswers)
   })
   if (correct === newCorrect) {
     wrongAnswers += 1
@@ -134,14 +127,36 @@ function logKey(e) {
   }
 }
 
+let head = document.querySelector("#head")
+let torso = document.querySelector("#torso")
+let leftArm = document.querySelector("#leftArm")
+let rightArm = document.querySelector("#rightArm")
+let legs = document.querySelector("#legs")
+
+head.classList.add("hidden")
+torso.classList.add("hidden")
+leftArm.classList.add("hidden")
+rightArm.classList.add("hidden")
+legs.classList.add("hidden")
+
+
 function displayParts(wrongAnswers) {
-  alert("in")
+console.log(wrongAnswers)
     switch (wrongAnswers) {
     case (1):
-      console.log("Greate Job BRAH")
+        head.classList.add("visible")
       break;
     case (2):
-     console.log("That's two thus far shooter")
+        torso.classList.add("visible")
+      break;
+    case (3):
+        leftArm.classList.add("visible")
+      break;
+    case (4):
+      rightArm.classList.add("visible")
+      break;
+    case (5):
+      legs.classList.add("visible")
       break;
     }
 

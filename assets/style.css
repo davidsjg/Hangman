@@ -55,3 +55,31 @@
 .visible {
   visibility: visible;
 }
+
+.bodyParts {
+  text-align: center;
+}
+
+#leftArm {
+  text-align: right;
+}
+#rightArm {
+  text-align: left;
+}
+
+.gallowsPole {
+  background-color: red;
+}
+
+.gallow {
+  background-color: red;
+  text-align: center;
+}
+
+.floatRight {
+  float: right;
+}
+
+.floatLeft {
+  float: left;
+}

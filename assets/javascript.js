@@ -5,23 +5,6 @@ let wordDisp = document.querySelector(".wordDisplay")
 let charDisp = document.querySelector(".displayChar")
 const log = document.getElementById('log');
 
-//event listener on keydown
-// document.addEventListener('keypress', logKey);
-// function logKey(e) {
-//   let keyPressed = e.key
-
-//   chars.forEach(function(letter){ 
-//     console.log(typeof letter)
-//     console.log(typeof keyPressed)
-
-//     if (keyPressed == letter) {
-      
-//       console.log("success")
-//     } else {
-//       console.log("fail")
-//     }
-//   })
-// }
 
 //grabs random word from array, splits word into letters, puts letters into new array
 let wordArray = ['steel', 'donkey', 'buffalo', 'avalanche', 'cereal']
@@ -107,7 +90,8 @@ let createRandom = function() {
 
 document.addEventListener('keypress', logKey);
 
-
+let wrongAnswers = 0
+let correctAnswers = 0
 
 function logKey(e) {
 
@@ -122,11 +106,34 @@ function logKey(e) {
     if (keyPressed == letter) {
       // showChar.removeAttribute("class", "hidden")
       $('.char-'+letter).text(letter)
+      correctAnswers += 1
+
 
     } else {
       console.log("fail")
+      wrongAnswers += 1
+
+      // if (wrongAnswers < 0)
+      
+
+
+
     }
+
+    console.log(correctAnswers)
+console.log(wrongAnswers)
   })
 }
+
+
+// switch (wrongAnswers) {
+
+//   case (1):
+//     console.log("Greate Job BRAH")
+//     break;
+//   case (2):
+//     console.log("That's two thus far shooter")
+//     break;
+// }
 
 

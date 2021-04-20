@@ -90,50 +90,64 @@ let createRandom = function() {
 
 document.addEventListener('keypress', logKey);
 
+let wrong = 0
+let correct = 0
 let wrongAnswers = 0
 let correctAnswers = 0
 
 function logKey(e) {
 
+  let newCorrect = correct
+
+  console.log(newCorrect)
 
   chars.forEach(function(letter){ 
     // console.log(typeof letter)
     // console.log(typeof keyPressed)
     let keyPressed = e.key
     let showChar= document.querySelector("#chars"-letter)
-    console.log(showChar)
+    // console.log(showChar)
 
     if (keyPressed == letter) {
       // showChar.removeAttribute("class", "hidden")
       $('.char-'+letter).text(letter)
-      correctAnswers += 1
+      correct += 1
+
 
 
     } else {
-      console.log("fail")
-      wrongAnswers += 1
-
-      // if (wrongAnswers < 0)
-      
-
+      // console.log("fail")
+      wrong += 1
+      // console.log("correct =" + correct)
+      // console.log("new correct =" + newCorrect)
 
 
     }
 
-    console.log(correctAnswers)
-console.log(wrongAnswers)
+
+//     console.log(correctAnswers)
+// console.log(wrongAnswers)
   })
+  if (correct === newCorrect) {
+    wrongAnswers += 1
+    displayParts(wrongAnswers)
+  }
+}
+
+function displayParts(wrongAnswers) {
+  alert("in")
+    switch (wrongAnswers) {
+    case (1):
+      console.log("Greate Job BRAH")
+      break;
+    case (2):
+     console.log("That's two thus far shooter")
+      break;
+    }
+
 }
 
 
-// switch (wrongAnswers) {
 
-//   case (1):
-//     console.log("Greate Job BRAH")
-//     break;
-//   case (2):
-//     console.log("That's two thus far shooter")
-//     break;
-// }
 
 
